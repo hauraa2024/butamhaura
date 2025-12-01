@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@use('Illuminate\Support\Facades\Storage')
+
 @section('title', 'Detail Tamu')
 @section('body-class', 'bg-emerald-50 text-slate-900 overflow-hidden')
 
@@ -67,6 +69,15 @@
                             </div>
                         </div>
                     </div>
+                    @if ($entry->photo)
+                        <div class="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+                            <p class="text-xs uppercase tracking-[0.2em] text-emerald-600">Foto Tamu</p>
+                            <div class="overflow-hidden rounded-xl bg-white">
+                                <img src="{{ Storage::url($entry->photo) }}" alt="Foto {{ $entry->name }}"
+                                    class="w-full h-auto max-h-96 object-cover">
+                            </div>
+                        </div>
+                    @endif
                     <div class="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
                         <p class="text-xs uppercase tracking-[0.2em] text-emerald-600">Keperluan</p>
                         <p class="text-sm text-slate-800">{{ $entry->purpose }}</p>

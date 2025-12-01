@@ -7,6 +7,7 @@ use App\Models\GuestEntry;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class PublicGuestController extends Controller
 {
@@ -26,6 +27,13 @@ class PublicGuestController extends Controller
     {
         $data = $request->validated();
         unset($data['captcha']);
+
+        // Handle file upload
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $path = $file->store('guest-photos', 'public');
+            $data['photo'] = $path;
+        }
 
         GuestEntry::create(array_merge($data, [
             'status' => GuestEntry::STATUS_PENDING,

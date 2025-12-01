@@ -17,6 +17,7 @@ composer install
 npm install
 php artisan key:generate
 php artisan migrate
+php artisan storage:link
 npm run dev   # atau npm run build untuk produksi
 php artisan serve
 ```

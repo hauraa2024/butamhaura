@@ -28,7 +28,7 @@
                     Kunjungan
                 </a>
             </nav>
-            <div class="mt-8 space-y-3 text-sm text-slate-700">
+            <div class="mt-8 space-y-3 text-sm text-slate-700">bg-emera
                 <div class="flex items-center justify-between rounded-xl border border-emerald-100 bg-white px-4 py-3 shadow-sm">
                     <div>
                         <p class="text-xs text-emerald-600">Masuk sebagai</p>

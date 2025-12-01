@@ -39,7 +39,7 @@
                 </div>
                 <div class="lg:col-span-3">
                     <div class="rounded-3xl border border-emerald-100 bg-white p-6 shadow-xl shadow-emerald-100/60">
-                        <form action="{{ route('guest.store') }}" method="POST" class="space-y-4">
+                        <form action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                             @csrf
                             <div class="grid gap-4 md:grid-cols-2">
                                 <div class="space-y-2">
@@ -99,7 +99,28 @@
                                     <p class="text-sm text-rose-500">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+                            <div class="space-y-2">
+                                <label for="photo" class="text-sm font-semibold text-slate-900">Foto (opsional)</label>
+                                <div class="flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-emerald-200 bg-emerald-50 p-6 transition focus-within:border-emerald-400 focus-within:bg-emerald-100">
+                                    <svg class="h-10 w-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div class="text-center">
+                                        <p class="text-sm font-semibold text-slate-900">Klik atau seret gambar ke sini</p>
+                                        <p class="text-xs text-slate-600">PNG, JPG, GIF hingga 5MB</p>
+                                    </div>
+                                    <input id="photo" name="photo" type="file" accept="image/*"
+                                        class="hidden h-full w-full cursor-pointer">
+                                </div>
+                                <div id="photoPreview" class="hidden">
+                                    <img id="photoImg" src="" alt="Preview" class="h-32 w-full rounded-xl object-cover">
+                                    <button type="button" id="clearPhoto"
+                                        class="mt-2 text-sm text-rose-600 hover:text-rose-700 font-medium">Hapus gambar</button>
+                                </div>
+                                @error('photo')
+                                    <p class="text-sm text-rose-500">{{ $message }}</p>
+                                @enderror
+                            </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-900">Captcha: {{ $captchaQuestion ?? 'Hitung penjumlahan' }}</label>
                                     <input name="captcha" type="text" inputmode="numeric" required
@@ -120,4 +141,57 @@
             </div>
         </div>
     </div>
+    <script>
+        const photoInput = document.getElementById('photo');
+        const photoUploadArea = photoInput.parentElement;
+        const photoPreview = document.getElementById('photoPreview');
+        const photoImg = document.getElementById('photoImg');
+        const clearPhotoBtn = document.getElementById('clearPhoto');
+
+        // Click to upload
+        photoUploadArea.addEventListener('click', () => photoInput.click());
+
+        // Drag and drop
+        photoUploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            photoUploadArea.classList.add('bg-emerald-100', 'border-emerald-400');
+        });
+
+        photoUploadArea.addEventListener('dragleave', () => {
+            photoUploadArea.classList.remove('bg-emerald-100', 'border-emerald-400');
+        });
+
+        photoUploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            photoUploadArea.classList.remove('bg-emerald-100', 'border-emerald-400');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                photoInput.files = files;
+                handlePhotoChange();
+            }
+        });
+
+        // File input change
+        photoInput.addEventListener('change', handlePhotoChange);
+
+        function handlePhotoChange() {
+            const file = photoInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    photoImg.src = e.target.result;
+                    photoPreview.classList.remove('hidden');
+                    photoUploadArea.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Clear photo
+        clearPhotoBtn.addEventListener('click', () => {
+            photoInput.value = '';
+            photoPreview.classList.add('hidden');
+            photoUploadArea.classList.remove('hidden');
+        });
+    </script>
 @endsection

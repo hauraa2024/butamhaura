@@ -30,6 +30,7 @@ class PublicGuestEntryRequest extends FormRequest
             'person_to_meet' => ['nullable', 'string', 'max:120'],
             'visit_date' => ['nullable', 'date'],
             'purpose' => ['required', 'string', 'max:500'],
+            'photo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:5120'],
             'captcha' => ['required', 'numeric'],
         ];
     }
@@ -46,6 +47,9 @@ class PublicGuestEntryRequest extends FormRequest
             'email.required' => 'Email wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'purpose.required' => 'Keperluan wajib diisi.',
+            'photo.image' => 'File harus berupa gambar.',
+            'photo.mimes' => 'Format gambar harus JPEG, PNG, JPG, atau GIF.',
+            'photo.max' => 'Ukuran gambar tidak boleh lebih dari 5MB.',
             'captcha.required' => 'Captcha wajib diisi.',
             'captcha.numeric' => 'Jawaban captcha harus berupa angka.',
         ];

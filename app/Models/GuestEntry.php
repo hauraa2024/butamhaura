@@ -28,6 +28,7 @@ class GuestEntry extends Model
         'person_to_meet',
         'visit_date',
         'purpose',
+        'photo',
         'status',
         'notes',
         'reviewed_by',
