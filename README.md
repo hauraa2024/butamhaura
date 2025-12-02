@@ -1,15 +1,33 @@
-📚 Dokumentasi Proyek ButamHaura
-ButamHaura adalah aplikasi web inovatif yang dirancang sebagai sistem Manajemen Janji Temu Digital bagi pengunjung atau pihak eksternal yang ingin bertemu dengan staf di kantor, instansi, atau perusahaan.
+## 📚 Dokumentasi Proyek Buku tamu
+Buku tamu adalah aplikasi web inovatif yang dirancang sebagai sistem Manajemen Janji Temu Digital bagi pengunjung atau pihak eksternal yang ingin bertemu dengan staf di kantor, instansi, atau perusahaan.
 
 Situs ini bertujuan untuk mentransformasi proses penjadwalan pertemuan dari metode konvensional menjadi sepenuhnya online.
 
-Tujuan Utama: Menyediakan platform yang efisien, transparan, dan terstruktur untuk memfasilitasi pembuatan janji temu.
+## Tujuan Utama: 
+Menyediakan platform yang efisien, transparan, dan terstruktur untuk memfasilitasi pembuatan janji temu.
 
-Memudahkan Proses: Mempercepat dan menyederhanakan proses pembuatan perjanjian pertemuan atau registrasi kunjungan tanpa memerlukan kehadiran fisik di lokasi kantor.
+## Memudahkan Proses:
+Mempercepat dan menyederhanakan proses pembuatan perjanjian pertemuan atau registrasi kunjungan tanpa memerlukan kehadiran fisik di lokasi kantor.
 
-Melalui ButamHaura, instansi dapat mengelola arus tamu dengan lebih teratur, sementara pengunjung dapat membuat janji temu dengan mudah dan menerima konfirmasi secara instan, sehingga meningkatkan efisiensi operasional dan pengalaman pengguna secara keseluruhan.
+Melalui Buku tamu, instansi dapat mengelola arus tamu dengan lebih teratur, sementara pengunjung dapat membuat janji temu dengan mudah dan menerima konfirmasi secara instan, sehingga meningkatkan efisiensi operasional dan pengalaman pengguna secara keseluruhan.
 
 Aplikasi Laravel 12 untuk mengelola buku tamu: login hanya admin, form publik dengan captcha, admin approve/reject, dan ekspor CSV.
+
+## Halaman publik (Non-Login)
+• Home 
+• Input data tamu
+
+## Authentication
+• Login
+
+## Admin
+• mengelola data tamu
+• melihat data tamu
+
+## 🔓 Akun Default
+• admin:
+   - Email : admin@example.com
+   - password : admin123
 
 ## Kebutuhan
 - PHP 8.2+ (proyek ini 8.4.14)
