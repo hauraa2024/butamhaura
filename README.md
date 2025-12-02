@@ -36,6 +36,26 @@ Aplikasi Laravel 12 untuk mengelola buku tamu: login hanya admin, form publik de
 ## UML
 ![WhatsApp Image 2025-12-02 at 7 53 39 PM](https://github.com/user-attachments/assets/29749876-b798-41d1-83b7-dcae934e2b68)
 
+## Teknologi yang Digunakan
+• laravel 12
+
+## Tools yang Digunakan 
+• Xampp
+• Apache2
+• MySQL
+• VSCode
+• Node.js
+• Npm
+• Composer
+• PHP
+• Laravel
+
+## Persyaratan untuk Instalasi
+• PHP 8.4.15
+• Web Server
+• Database (MySQL)
+• Web Browser
+
 ## Kebutuhan
 - PHP 8.2+ (proyek ini 8.4.14)
 - Composer
