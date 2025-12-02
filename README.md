@@ -122,4 +122,4 @@ php artisan serve
 php artisan test --filter=AdminLoginTest
 php artisan test --filter=GuestEntryFlowTest
 ```
-![faccae9f-e0fb-44dd-9392-06c9ba4f2c1f](https://github.com/user-attachments/assets/81f4bdfc-7486-47d5-a44e-340ae02dec7d)
+
