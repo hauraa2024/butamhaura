@@ -30,11 +30,11 @@ Aplikasi Laravel 12 untuk mengelola buku tamu: login hanya admin, form publik de
    - password : admin123
 
 ## ERD
-![Uploading image.png…]()
+![WhatsApp Image 2025-12-02 at 7 57 51 PM](https://github.com/user-attachments/assets/ebf1f2d9-c20b-4b46-9a9f-ec6f5bf42036)
+
 
 ## UML
-![Uploading image.png…]()
-
+![WhatsApp Image 2025-12-02 at 7 53 39 PM](https://github.com/user-attachments/assets/29749876-b798-41d1-83b7-dcae934e2b68)
 
 ## Kebutuhan
 - PHP 8.2+ (proyek ini 8.4.14)
