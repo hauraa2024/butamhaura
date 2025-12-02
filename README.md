@@ -29,6 +29,13 @@ Aplikasi Laravel 12 untuk mengelola buku tamu: login hanya admin, form publik de
    - Email : admin@example.com
    - password : admin123
 
+## ERD
+![Uploading image.png…]()
+
+## UML
+![Uploading image.png…]()
+
+
 ## Kebutuhan
 - PHP 8.2+ (proyek ini 8.4.14)
 - Composer
