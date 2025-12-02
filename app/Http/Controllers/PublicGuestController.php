@@ -8,9 +8,13 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use Random\RandomException;
 
 class PublicGuestController extends Controller
 {
+    /**
+     * @throws RandomException
+     */
     public function create(Request $request): View
     {
         $first = random_int(1, 9);
